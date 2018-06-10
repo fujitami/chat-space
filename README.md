@@ -19,7 +19,7 @@
 |member|text|add_index :users, :name|
 
 ### Associasion
-- belongs_to :user
+- has_many :users, through: :member
 - has_many :messages
 
 ## usersテーブル
@@ -31,7 +31,7 @@
 |password|string|null: false|
 
 ### Association
-- belongs_to :group
+- has_many :groups, through: :member
 - has_many :messages
 
 ## messagesテーブル
@@ -40,8 +40,6 @@
 |------|----|-------|
 |body|text| |
 |image|string| |
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
