@@ -16,9 +16,9 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|text|null: false|
-|member|text|add_index :users, :name|
 
 ### Associasion
+- has_many :members
 - has_many :users, through: :member
 - has_many :messages
 
@@ -31,6 +31,7 @@
 |password|string|null: false|
 
 ### Association
+- has_many :members
 - has_many :groups, through: :member
 - has_many :messages
 
