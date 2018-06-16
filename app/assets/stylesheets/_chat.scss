@@ -1,0 +1,97 @@
+chat {
+  height: 100vh;
+  width: calc(100vw - 300px);
+  background-color: #FAFAFA;
+  float: left;
+  position: relative;
+  .header {
+    height: calc(35px + 20px + 15px + 12px + 20px);
+    width: calc(100vw - 300px);
+    background-color: white;
+    padding: 0 40px;
+    box-sizing: border-box;
+    border-bottom: medium solid #EEEEEE;
+    .left-header {
+      float: left;
+      height: 100vh;
+      .left-header__title {
+        font-size: 20px;
+        color: #333333;
+        margin: 35px 0 15px 0;
+      }
+      .left-header__member {
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+    .right-header {
+      float: right;
+      height: 40px;
+      color: #38AEF0;
+      line-height: 40px;
+      border: thin solid #38AEF0;
+      padding: 0 20px;
+      margin: 28px 0 0 0;
+      box-sizing: border-box;
+    }
+  }
+  .messages {
+    position: absolute;
+    height: calc(46px + 16px + 10px + 14px + 40px);
+    width: calc(100vw - 300px);
+    padding: 46px 40px 40px;
+    box-sizing: border-box;
+    background-color: #FAFAFA;
+    .upper-message {
+      .upper-message__name {
+        float: left;
+        color: #434a54;
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .upper-message__date {
+        float: left;
+        color: #999999;
+        font-size: 12px;
+      }
+    }
+    .lower-message {
+      color: #434a54;
+      font-size: 14px;
+      margin-top: 10px;
+      clear: both;
+    }
+  }
+  .form {
+    height: calc(20px + 50px + 20px);
+    width: calc(100vw - 300px);
+    background-color: #AAAAAA;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    .form__message {
+      float: left;
+      height: 50px;
+      width: calc(100% - 150px); // なぜ？
+      background-color: white;
+      font-size: 16px;
+      color: #434A54;
+      line-height: 50px;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+    .form__submit {
+      float: right;
+      height: 50px;
+      background-color: #38AEF0;
+      color: white;
+      line-height: 50px;
+      margin-left: 15px;
+      padding: 0 30px; // なぜ？
+      box-sizing: border-box;
+    }
+  }
+}
+
