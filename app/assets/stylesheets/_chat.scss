@@ -7,7 +7,7 @@ chat {
   .header {
     height: 35px + 20 + 15 + 12 + 20;
     width: $chat-width;
-    background-color: #FFFFFF;
+    background-color: $white;
     padding: 0 40px;
     box-sizing: border-box;
     border-bottom: medium solid #EEEEEE;
@@ -20,19 +20,19 @@ chat {
       }
       .left-header__member {
         font-size: 12px;
-        color: #999999;
+        color: $chat-gray;
       }
     }
     .right-header {
       float: right;
       height: 40px;
       line-height: 40px;
-      border: thin solid #38AEF0;
+      border: thin solid $blue;
       padding: 0 20px;
       margin: 28px 0 0 0;
       box-sizing: border-box;
       a {
-        color: #38AEF0;
+        color: $blue;
         text-decoration: none;
       }
     }
@@ -40,26 +40,26 @@ chat {
   .messages {
     position: absolute;
     height: 46px + 16 + 10 + 14 + 40;
-    width: calc(500vw - 300px);
+    width: $chat-width;
     padding: 46px 40px 40px;
     box-sizing: border-box;
     background-color: #FAFAFA;
     .upper-message {
       .upper-message__name {
         float: left;
-        color: #434a54;
+        color: $chat-black;
         font-size: 16px;
         font-weight: bold;
         margin-right: 10px;
       }
       .upper-message__date {
         float: left;
-        color: #999999;
+        color: $chat-gray;
         font-size: 12px;
       }
     }
     .lower-message {
-      color: #434a54;
+      color: $chat-black;
       font-size: 14px;
       margin-top: 10px;
       clear: both;
@@ -77,9 +77,9 @@ chat {
       float: left;
       height: 50px;
       width: calc(100% - 150px);
-      background-color: #FFFFFF;
+      background-color: $white;
       font-size: 16px;
-      color: #434A54;
+      color: $chat-black;
       line-height: 50px;
       padding: 0 10px;
       box-sizing: border-box;
@@ -89,7 +89,7 @@ chat {
         float: left;
         height: 50px;
         line-height: 50px;
-        background-color: #FFFFFF;
+        background-color: $white;
         padding-right: 10px;
         cursor: pointer;
         #upload-icon {
@@ -99,7 +99,7 @@ chat {
     input[type="submit"] {
       float: right;
       height: 50px;
-      background-color: #38AEF0;
+      background-color: $blue;
       color: white;
       line-height: 50px;
       margin-left: 15px;
