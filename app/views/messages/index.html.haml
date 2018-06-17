@@ -1,45 +1,38 @@
 .notification
   .notice チャットグループが作成されました。
 
-.wrapper
-  :css
-    .wrapper {
-    display:flex;
-    }
+.side-bar
+  .header
+    .header__name Midori
+    .header__list
+      %ul<
+        %li<
+          %a{href: "http://ruby-rails.hatenadiary.com/entry/20141001/1412097051"}
+            %i.fa.fa-edit
+        %li<
+          %a{href: "https://www.webprofessional.jp/css-viewport-units-quick-start/"}
+            %i.fa.fa-cog
+  .groups
+    .group__name test
+    .group__message test
 
-  .side-bar
-    .header
-      .header__name Midori
-      .header__list
-        %ul<
-          %li<
-            %a{href: "http://ruby-rails.hatenadiary.com/entry/20141001/1412097051"}
-              %i.fa.fa-edit
-          %li<
-            %a{href: "https://www.webprofessional.jp/css-viewport-units-quick-start/"}
-              %i.fa.fa-cog
-    .groups
-      .group__name test
-      .group__message test
-
-  .chat
-    .header
-      .left-header
-        .left-header__title test
-        .left-header__member Member : Hatano Yamaguchi Fukui
-      .right-header
-        %a{href: "https://peopleinthebox.com/"}
-          %p Edit
-    .messages
-      .upper-message
-        .upper-message__name test
-        .upper-message__date 1993/4/23 00:00
-      .lower-message test
-    .form
-      %input.form__message{placeholder: "type a message", type: "text"}
-        .form__image
-          %label.upload-label{for: "upload-icon"}
-            %i.fa.fa-image
-            %input#upload-icon{type: "file"}
-      %input{type: "submit", value: "Send"}
-
+.chat
+  .header
+    .left-header
+      .left-header__title test
+      .left-header__member Member : Hatano Yamaguchi Fukui
+    .right-header
+      %a{href: "https://peopleinthebox.com/"}
+        %p Edit
+  .messages
+    .upper-message
+      .upper-message__name test
+      .upper-message__date 1993/4/23 00:00
+    .lower-message test
+  .form
+    %input.form__message{placeholder: "type a message", type: "text"}
+      .form__image
+        %label.upload-label{for: "upload-icon"}
+          %i.fa.fa-image
+          %input#upload-icon{type: "file"}
+    %input{type: "submit", value: "Send"}
