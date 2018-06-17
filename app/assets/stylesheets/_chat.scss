@@ -1,23 +1,22 @@
 chat {
   height: 100vh;
-  width: calc(100vw - 300px);
+  width: $chat-width;
   background-color: #FAFAFA;
   float: left;
   position: relative;
   .header {
-    height: calc(35px + 20px + 15px + 12px + 20px);
-    width: calc(100vw - 300px);
-    background-color: white;
+    height: 35px + 20 + 15 + 12 + 20;
+    width: $chat-width;
+    background-color: #FFFFFF;
     padding: 0 40px;
     box-sizing: border-box;
     border-bottom: medium solid #EEEEEE;
     .left-header {
       float: left;
-      height: 100vh;
       .left-header__title {
         font-size: 20px;
         color: #333333;
-        margin: 35px 0 15px 0;
+        padding: 35px 0 15px 0;
       }
       .left-header__member {
         font-size: 12px;
@@ -27,18 +26,21 @@ chat {
     .right-header {
       float: right;
       height: 40px;
-      color: #38AEF0;
       line-height: 40px;
       border: thin solid #38AEF0;
       padding: 0 20px;
       margin: 28px 0 0 0;
       box-sizing: border-box;
+      a {
+        color: #38AEF0;
+        text-decoration: none;
+      }
     }
   }
   .messages {
     position: absolute;
-    height: calc(46px + 16px + 10px + 14px + 40px);
-    width: calc(100vw - 300px);
+    height: 46px + 16 + 10 + 14 + 40;
+    width: calc(500vw - 300px);
     padding: 46px 40px 40px;
     box-sizing: border-box;
     background-color: #FAFAFA;
@@ -64,9 +66,9 @@ chat {
     }
   }
   .form {
-    height: calc(20px + 50px + 20px);
-    width: calc(100vw - 300px);
-    background-color: #AAAAAA;
+    height: 20px + 50 + 20;
+    width: $chat-width;
+    background-color: #DDDDDD;
     padding: 20px 40px;
     box-sizing: border-box;
     position: absolute;
@@ -74,23 +76,36 @@ chat {
     .form__message {
       float: left;
       height: 50px;
-      width: calc(100% - 150px); // なぜ？
-      background-color: white;
+      width: calc(100% - 150px);
+      background-color: #FFFFFF;
       font-size: 16px;
       color: #434A54;
       line-height: 50px;
       padding: 0 10px;
       box-sizing: border-box;
+      border: none;
     }
-    .form__submit {
+      .upload-label{
+        float: left;
+        height: 50px;
+        line-height: 50px;
+        background-color: #FFFFFF;
+        padding-right: 10px;
+        cursor: pointer;
+        #upload-icon {
+          display: none;
+        }
+      }
+    input[type="submit"] {
       float: right;
       height: 50px;
       background-color: #38AEF0;
       color: white;
       line-height: 50px;
       margin-left: 15px;
-      padding: 0 30px; // なぜ？
+      padding: 0 30px;
       box-sizing: border-box;
+      border: none;
     }
   }
 }
