@@ -1,0 +1,112 @@
+.chat {
+  height: 100vh;
+  width: $chat-width;
+  background-color: #FAFAFA;
+  float: left;
+  position: relative;
+  .header {
+    height: 35px + 20 + 15 + 12 + 20;
+    width: $chat-width;
+    background-color: $white;
+    padding: 0 40px;
+    box-sizing: border-box;
+    border-bottom: medium solid #EEEEEE;
+    .left-header {
+      float: left;
+      .left-header__title {
+        font-size: 20px;
+        color: #333333;
+        padding: 35px 0 15px 0;
+      }
+      .left-header__member {
+        font-size: 12px;
+        color: $chat-gray;
+      }
+    }
+    .right-header {
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      border: thin solid $blue;
+      padding: 0 20px;
+      margin-top: 28px;
+      box-sizing: border-box;
+      a {
+        color: $blue;
+        text-decoration: none;
+      }
+    }
+  }
+  .messages {
+    position: absolute;
+    height: 46px + 16 + 10 + 14 + 40;
+    width: $chat-width;
+    padding: 46px 40px 40px;
+    box-sizing: border-box;
+    background-color: #FAFAFA;
+    .upper-message {
+      .upper-message__name {
+        float: left;
+        color: $chat-black;
+        font-size: 16px;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+      .upper-message__date {
+        float: left;
+        color: $chat-gray;
+        font-size: 12px;
+      }
+    }
+    .lower-message {
+      color: $chat-black;
+      font-size: 14px;
+      margin-top: 10px;
+      clear: both;
+    }
+  }
+  .form {
+    height: 20px + 50 + 20;
+    width: $chat-width;
+    background-color: #DDDDDD;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    .form__message {
+      float: left;
+      height: 50px;
+      width: calc(100% - 150px);
+      background-color: $white;
+      font-size: 16px;
+      color: $chat-black;
+      line-height: 50px;
+      padding: 0 10px;
+      box-sizing: border-box;
+      border: none;
+    }
+      .upload-label{
+        float: left;
+        height: 50px;
+        line-height: 50px;
+        background-color: $white;
+        padding-right: 10px;
+        cursor: pointer;
+        #upload-icon {
+          display: none;
+        }
+      }
+    input[type="submit"] {
+      float: right;
+      height: 50px;
+      background-color: $blue;
+      color: white;
+      line-height: 50px;
+      margin-left: 15px;
+      padding: 0 30px;
+      box-sizing: border-box;
+      border: none;
+    }
+  }
+}
+
