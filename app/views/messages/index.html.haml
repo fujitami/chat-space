@@ -1,20 +1,19 @@
-.notification
-  .notice チャットグループが作成されました。
-
 .side-bar
   .header
-    .header__name Midori
+    %h3.header__name
+      = current_user.name
     .header__list
       %ul<
         %li<
-          %a{href: "http://ruby-rails.hatenadiary.com/entry/20141001/1412097051"}
-            %i.fa.fa-edit
+          = link_to do
+            = fa_icon 'edit', class: 'icon'
         %li<
-          %a{href: "https://www.webprofessional.jp/css-viewport-units-quick-start/"}
-            %i.fa.fa-cog
+          = link_to edit_user_path(current_user) do
+            = fa_icon 'cog', class: 'icon'
   .groups
-    .group__name test
-    .group__message test
+    .group
+      .group__name test
+      .group__message test
 
 .chat
   .header
