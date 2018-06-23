@@ -35,19 +35,21 @@
     }
   }
   .groups {
-    height: 20px + 5 + 40 + 15 + 11;
-    width: $side-width;
-    padding: 20px 20px 40px;
-    box-sizing: border-box;
-    background-color: #2F3E51;
-    .group__name {
-      font-size: 15px;
-      color: $white;
-    }
-    .group__message {
-      font-size: 11px;
-      color: $white;
-      margin-top: 5px;
+    .group {
+      height: 20px + 5 + 40 + 15 + 11;
+      width: $side-width;
+      padding: 20px 20px 40px 20px;
+      box-sizing: border-box;
+      background-color: #2F3E51;
+      .group__name {
+        font-size: 15px;
+        color: $white;
+      }
+      .group__message {
+        font-size: 11px;
+        color: $white;
+        margin-top: 5px;
+      }
     }
   }
 }
