@@ -1,0 +1,26 @@
+.chat
+  .header
+    .left-header
+      .left-header__title test
+      .left-header__member
+        .member Member :
+        .member Hatano
+        .member Yamaguchi
+        .member Fukui
+    .right-header
+      %a.right-header__button{href: "https://peopleinthebox.com/"}
+        Edit
+  .messages
+    .message
+      .upper-message
+        .upper-message__user-name test
+        .upper-message__date 1993/4/23 00:00
+      .lower-message
+        .lower-message__content test
+  .form
+    %input.form__message{placeholder: "type a message", type: "text"}
+      .form__mask
+        %label.form__image{for: "upload-icon"}
+          %i.fa.fa-image
+        %input#upload-icon.hidden{type: "file"}
+    %input.form__submit{type: "submit", value: "Send"}

@@ -1,51 +1,41 @@
 .side-bar {
-  height: 100vh;
+  box-sizing: border-box;
   width: $side-width;
-  background-color: #2f3e51;
-  float: left;
+  color: $white;
   .header {
-    height: 35px + 20 + 15 + 12 + 20;
-    width: $side-width;
+    height: 100px;
     background-color: #253141;
     padding: 0 20px;
-    box-sizing: border-box;
-    .header__name {
-      float: left;
-      color: $white;
+    line-height: 100px;
+    &__name {
+      display: inline-block;
       font-size: 16px;
       font-weight: bold;
-      line-height: 35px + 20 + 15 + 12 + 20;
     }
-    .header__list {
+    &__lists {
       float: right;
-      ul {
-        list-style-type: none;
-        li {
-          float: left;
-          line-height: 35px + 20 + 15 + 12 + 20;
-          margin: 5px;
-          .fa.fa-edit {
-            color: $white;
-          }
-          .fa.fa-cog {
-            color: $white;
-          }
-        }
+      display: inline-block;
+      .list {
+        display: inline-block;
+      }
+      .icon {
+        color: $white;
+        font-size: 16px;
       }
     }
   }
   .groups {
+    background-color: #2F3E51;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
     .group {
-      height: 20px + 5 + 40 + 15 + 11;
-      width: $side-width;
-      padding: 20px 20px 40px 20px;
+      padding: 20px 0 40px;
       box-sizing: border-box;
-      background-color: #2F3E51;
-      .group__name {
+      &__name {
         font-size: 15px;
         color: $white;
       }
-      .group__message {
+      &__message {
         font-size: 11px;
         color: $white;
         margin-top: 5px;

@@ -1,110 +1,101 @@
 .chat {
-  height: 100vh;
   width: $chat-width;
-  background-color: #FAFAFA;
-  float: left;
-  position: relative;
   .header {
-    height: 35px + 20 + 15 + 12 + 20;
-    width: $chat-width;
-    background-color: $white;
+    height: 100px;
     padding: 0 40px;
     box-sizing: border-box;
-    border-bottom: medium solid #EEEEEE;
     .left-header {
       float: left;
-      .left-header__title {
+      &__title {
         font-size: 20px;
         color: #333333;
-        padding: 35px 0 15px 0;
+        margin-top: 35px;
       }
-      .left-header__member {
+      &__member {
+        @include flexbox;
         font-size: 12px;
         color: $chat-gray;
+        margin-top: 15px;
+        .member {
+          display: inline-block;
+          padding-right: 5px;
+        }
       }
     }
     .right-header {
+      border: 1px solid $blue;
       float: right;
       height: 40px;
       line-height: 40px;
-      border: thin solid $blue;
       padding: 0 20px;
       margin-top: 28px;
-      box-sizing: border-box;
-      a {
+      &__button {
         color: $blue;
         text-decoration: none;
       }
     }
   }
   .messages {
-    position: absolute;
-    height: 46px + 16 + 10 + 14 + 40;
-    width: $chat-width;
-    padding: 46px 40px 40px;
+    height: calc(100% - 100px - 90px);
+    padding: 46px 40px 0px;
     box-sizing: border-box;
     background-color: #FAFAFA;
-    .upper-message {
-      .upper-message__name {
-        float: left;
-        color: $chat-black;
-        font-size: 16px;
-        font-weight: bold;
-        margin-right: 10px;
+    .message {
+      .upper-message {
+        display: flex;
+        &__user-name {
+          color: $chat-black;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: $chat-gray;
+          font-size: 12px;
+          padding-left: 10px;
+        }
       }
-      .upper-message__date {
-        float: left;
-        color: $chat-gray;
-        font-size: 12px;
+      .lower-message {
+        margin-top: 10px;
+        &__content {
+          color: $chat-black;
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
       }
-    }
-    .lower-message {
-      color: $chat-black;
-      font-size: 14px;
-      margin-top: 10px;
-      clear: both;
     }
   }
   .form {
-    height: 20px + 50 + 20;
-    width: $chat-width;
+    height: 90px;
     background-color: #DDDDDD;
-    padding: 20px 40px;
+    padding: 20px 50px 20px 40px;
     box-sizing: border-box;
-    position: absolute;
-    bottom: 0;
-    .form__message {
+    &__message {
+      border: none;
       float: left;
       height: 50px;
       width: calc(100% - 150px);
-      background-color: $white;
-      font-size: 16px;
-      color: $chat-black;
-      line-height: 50px;
-      padding: 0 10px;
-      box-sizing: border-box;
-      border: none;
     }
-      .upload-label{
-        float: left;
-        height: 50px;
+    &__mask {
+      background-color: $white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      label {
+        font-size: 20px;
         line-height: 50px;
-        background-color: $white;
-        padding-right: 10px;
-        cursor: pointer;
-        #upload-icon {
-          display: none;
-        }
       }
-    input[type="submit"] {
+      .hidden {
+        display: none;
+      }
+    }
+    &__submit {
       float: right;
       height: 50px;
       background-color: $blue;
       color: white;
-      line-height: 50px;
+      font-size: 16px;
       margin-left: 15px;
       padding: 0 30px;
-      box-sizing: border-box;
       border: none;
     }
   }
