@@ -1,26 +1,23 @@
 .chat
   .header
     .left-header
-      .left-header__title test
-      .left-header__member
-        .member Member :
-        .member Hatano
-        .member Yamaguchi
-        .member Fukui
+      .left-header__title
+        = @group.name
+      %ul.left-header__member
+        Member :
+        - @group.group_users.each do |group_user|
+          %li.member__name
+            = group_user.user.name
     .right-header
       %a.right-header__button{href: "https://peopleinthebox.com/"}
         Edit
   .messages
-    .message
-      .upper-message
-        .upper-message__user-name test
-        .upper-message__date 1993/4/23 00:00
-      .lower-message
-        .lower-message__content test
+    = render partial: 'message', collection: @messages
   .form
-    %input.form__message{placeholder: "type a message", type: "text"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
       .form__mask
-        %label.form__image{for: "upload-icon"}
-          %i.fa.fa-image
-        %input#upload-icon.hidden{type: "file"}
-    %input.form__submit{type: "submit", value: "Send"}
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
