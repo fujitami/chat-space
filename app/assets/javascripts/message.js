@@ -20,10 +20,11 @@ $(function(){
               </div>`
     return html;
   }
-  $('#form__content').on('submit', function(e){
+  $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action')
+    var url = $(this).attr('action');
+    var scroll = $('.messages').animate({ scrollTop: $('.message:last').offset().top } );
     $.ajax({
       url: url,
       type: 'POST',
@@ -35,12 +36,12 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('.form__message').val('');
       $('.form__submit').prop('disabled', false);
-      $('.messages').animate({ scrollTop: $('.message:last').offset().top }, 'swing' );
+      scroll;
+      $('#new_message')[0].reset();
     })
     .fail(function(){
       alert('投稿に失敗しました。');
     })
-  })
-})
+  });
+});
