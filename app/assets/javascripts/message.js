@@ -24,7 +24,9 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    var scroll = $('.messages').animate({ scrollTop: $('.message:last').offset().top } );
+    function scroll(messages) {
+      messages.animate({ scrollTop: $('.message:last').offset().top }, 'swing');
+    }
     $.ajax({
       url: url,
       type: 'POST',
@@ -37,7 +39,7 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html);
       $('.form__submit').prop('disabled', false);
-      scroll;
+      scroll($('.messages'));
       $('#new_message')[0].reset();
     })
     .fail(function(){
