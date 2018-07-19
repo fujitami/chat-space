@@ -1,14 +1,16 @@
 $(function() {
-var search_list = $('.user-search-index');
+var search_list = $('#user-search-result');
 var chat_users = $('#chat-group-users');
 
   function appendUser(user) {
-    var html = `<li>
-                  <div class="chat-group-user clearfix">
-                    <p class="chat-group-user__name">${ user.name }</p>
-                    <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${ user.id } data-user-name=${ user.name }>追加</a>
-                  </div>
-                </li>`
+    var html = `<ul class='user-search-index'>
+                  <li>
+                    <div class="chat-group-user clearfix">
+                      <p class="chat-group-user__name">${ user.name }</p>
+                      <a class="user-search-add chat-group-user__btn chat-group-user__btn--add" data-user-id=${ user.id } data-user-name=${ user.name }>追加</a>
+                    </div>
+                  </li>
+                </ul>`
     search_list.append(html);
   }
 
@@ -52,19 +54,19 @@ var chat_users = $('#chat-group-users');
     })
   });
 
-  $('#user-search-result').on('click', '.chat-group-user__btn--add', function(e) {
+  $('#user-search-result').on('click', '.user-search-add', function(e) {
     e.stopPropagation();
     var id = $(this).attr('data-user-id');
     var name = $(this).attr('data-user-name');
     addChatUser(id, name);
 
-    var index = $('.chat-group-user__btn--add').index(this);
+    var index = $('.user-search-add').index(this);
     var removeObj = $('li').eq(`${index}`).remove();
   });
 
-  $('#chat-group-users').on('click', '.chat-group-user__btn--remove', function(e) {
+  $('#chat-group-users').on('click', '.js-remove-btn', function(e) {
     e.stopPropagation();
-    var index = $('.chat-group-user__btn--remove').index(this);
+    var index = $('.js-remove-btn').index(this);
     $('div.js-chat-member').eq(`${index}`).remove();
   });
 });
