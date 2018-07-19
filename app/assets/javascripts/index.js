@@ -1,6 +1,6 @@
 $(function() {
-var search_list = $('#user-search-result');
-var chat_users = $('#chat-group-users');
+  var search_list = $('#user-search-result');
+  var chat_users = $('#chat-group-users');
 
   function appendUser(user) {
     var html = `<ul class='user-search-index'>
@@ -15,9 +15,11 @@ var chat_users = $('#chat-group-users');
   }
 
   function appendNoUser(user) {
-    var html = `<li>
-                  <div class="chat-group-user clearfix">${ user }</div>
-                </li>`
+    var html = `<ul class='user-search-index'>
+                  <li>
+                    <div class="chat-group-user clearfix">${ user }</div>
+                  </li>
+                </ul>`
     search_list.append(html);
   }
 
@@ -59,14 +61,11 @@ var chat_users = $('#chat-group-users');
     var id = $(this).attr('data-user-id');
     var name = $(this).attr('data-user-name');
     addChatUser(id, name);
-
-    var index = $('.user-search-add').index(this);
-    var removeObj = $('li').eq(`${index}`).remove();
+    $(this).parent().remove();
   });
 
   $('#chat-group-users').on('click', '.js-remove-btn', function(e) {
     e.stopPropagation();
-    var index = $('.js-remove-btn').index(this);
-    $('div.js-chat-member').eq(`${index}`).remove();
+    $(this).parent().remove();
   });
 });
