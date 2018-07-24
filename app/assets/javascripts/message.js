@@ -60,8 +60,8 @@ $(function(){
         var updateHTML = '';
         data.forEach(function(message) {
           updateHTML += buildHTML(message);
-          $('.messages').append(updateHTML);
         });
+        $('.messages').html(updateHTML);
         scroll($('.messages'));
       })
       .fail(function(data) {
