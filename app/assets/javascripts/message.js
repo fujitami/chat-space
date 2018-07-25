@@ -5,7 +5,7 @@ $(function(){
 
   function buildHTML(message){
     var img = message.image_url ? `<img class="lower-message__image" src="${ message.image_url }">` : ``
-    var html = `<div class="message">
+    var html = `<div class="message" data-message-id="${ message.id }">
                   <div class="upper-message">
                     <div class="upper-message__user-name">
                       ${ message.user_name }
@@ -46,7 +46,7 @@ $(function(){
     })
     .fail(function(){
       alert('投稿に失敗しました。');
-    })
+    });
   });
 
   var autoUpdate = setInterval(function() {
@@ -57,18 +57,21 @@ $(function(){
         dataType: 'json'
       })
       .done(function(data) {
+        var id = $('.message:last').data('messageId');
         var updateHTML = '';
-        data.forEach(function(message) {
-          updateHTML += buildHTML(message);
+        data.messages.forEach(function(message) {
+          if (message.id > id) {
+            updateHTML += buildHTML(message);
+          }
         });
-        $('.messages').html(updateHTML);
+        $('.messages').append(updateHTML);
         scroll($('.messages'));
       })
       .fail(function(data) {
         alert('自動更新に失敗しました。');
       });
     } else {
-      clearInterval
+      clearInterval(autoUpdate);
     }
   }, 5000);
 });
