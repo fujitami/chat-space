@@ -51,18 +51,17 @@ $(function(){
 
   var autoUpdate = setInterval(function() {
     if (location.pathname.match(/\/groups\/\d+\/messages/)){
+      var lastId = $('.message:last').data('messageId');
       $.ajax({
         url: location.pathname,
         type: 'GET',
+        data: { 'lastId': lastId },
         dataType: 'json'
       })
       .done(function(data) {
-        var id = $('.message:last').data('messageId');
         var updateHTML = '';
         data.messages.forEach(function(message) {
-          if (message.id > id) {
-            updateHTML += buildHTML(message);
-          }
+          updateHTML += buildHTML(message);
         });
         $('.messages').append(updateHTML);
         scroll($('.messages'));
