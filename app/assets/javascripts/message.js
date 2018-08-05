@@ -1,6 +1,6 @@
 $(function(){
   function scroll(messages) {
-    messages.animate({ scrollTop: $('.message:last').offset().top }, 'swing');
+    messages.animate({ scrollTop: $('.messages')[0].scrollHeight }, 'swing');
   }
 
   function buildHTML(message){
@@ -55,12 +55,12 @@ $(function(){
       $.ajax({
         url: location.pathname,
         type: 'GET',
-        data: { 'lastId': lastId },
+        data: { lastId: lastId },
         dataType: 'json'
       })
       .done(function(data) {
         var updateHTML = '';
-        data.messages.forEach(function(message) {
+        data.forEach(function(message) {
           updateHTML += buildHTML(message);
         });
         $('.messages').append(updateHTML);

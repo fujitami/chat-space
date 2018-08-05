@@ -9,8 +9,7 @@
           %li.member__name
             = group_user.user.name
     .right-header
-      %a.right-header__button{href: "https://peopleinthebox.com/"}
-        Edit
+      = link_to 'edit', edit_group_path(@group), class: 'right-header__button'
   .messages
     = render partial: 'message', collection: @messages
   .form
