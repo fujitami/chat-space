@@ -62,9 +62,11 @@ $(function(){
         var updateHTML = '';
         data.forEach(function(message) {
           updateHTML += buildHTML(message);
+          if(message) {
+            $('.messages').append(updateHTML);
+            scroll($('.messages'));
+          }
         });
-        $('.messages').append(updateHTML);
-        scroll($('.messages'));
       })
       .fail(function(data) {
         alert('自動更新に失敗しました。');
