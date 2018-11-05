@@ -78,3 +78,5 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog-aws'
+gem "loofah", ">= 2.2.3"
+gem "sprockets", ">= 3.7.2"
