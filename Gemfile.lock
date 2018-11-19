@@ -172,7 +172,7 @@ GEM
     pry-rails (0.3.6)
       pry (>= 0.10.4)
     puma (3.11.4)
-    rack (2.0.5)
+    rack (2.0.6)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.7)
@@ -304,6 +304,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  loofah (>= 2.2.3)
   mini_magick
   mysql2 (>= 0.3.18, < 0.5)
   pry-rails
@@ -315,6 +316,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   spring
   spring-watcher-listen (~> 2.0.0)
+  sprockets (>= 3.7.2)
   tzinfo-data
   uglifier (>= 1.3.0)
   unicorn
